@@ -32,6 +32,9 @@ public class Gun : MonoBehaviour
         // Spawn the bullet
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
 
+        // Destroy bullet after 10 seconds
+        Destroy(bullet, 10f);
+
         // Apply forward force if Rigidbody exists
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
@@ -40,3 +43,4 @@ public class Gun : MonoBehaviour
         }
     }
 }
+
