@@ -46,7 +46,8 @@ public class AudioManager : MonoBehaviour
         foreach (AudioEmitter emitter in audioEmitters)
         {
             if (emitter.transform.gameObject.activeSelf == false)
-            {   audioEmitters.Remove(emitter);
+            {
+                audioEmitters.Remove(emitter);
                 return emitter;
             }
         }
@@ -56,7 +57,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("No available audio emitters in the pool. Consider increasing the pool size.");
             return null;
         }
-      
+        
         return null;
     }
 }
