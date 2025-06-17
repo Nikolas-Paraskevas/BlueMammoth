@@ -3,28 +3,33 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
-    public float damage = 10f;
-    public float lifetime = 3f;
+    public int damage = 10;
 
-    void Start()
+    private void Start()
     {
-        Destroy(gameObject, lifetime); // destroy after a few seconds
+        Destroy(gameObject, 5f); // Destroy bullet after 5 seconds to prevent clutter
     }
 
-    void Update()
+    private void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        // Try to damage object
-        EnemyTarget target = collision.transform.GetComponent<EnemyTarget>();
-        if (target != null)
+        if (collision.gameObject.CompareTag("Target"))
         {
-            target.TakeDamage(damage);
-        }
+            EnemyTarget enemy = collision.gameObject.GetComponent<EnemyTarget>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
 
-        Destroy(gameObject); // destroy bullet on hit
+            Destroy(gameObject); // Destroy bullet after hitting
+        }
+        else
+        {
+            Destroy(gameObject); // Optional: destroy on any collision
+        }
     }
 }
