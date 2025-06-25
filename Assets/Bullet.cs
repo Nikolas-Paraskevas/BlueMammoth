@@ -24,12 +24,6 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
-
-            Destroy(gameObject); // Destroy bullet after hitting
-        }
-        else
-        {
-            Destroy(gameObject); // Optional: destroy on any collision
         }
     }
 }

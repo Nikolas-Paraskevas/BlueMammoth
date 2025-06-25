@@ -15,6 +15,7 @@ public class EnemyTarget : MonoBehaviour
         }
     }
 
+
     void Die()
     {
         Debug.Log("Enemy died!");

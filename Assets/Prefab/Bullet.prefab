@@ -133,7 +133,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &-5194101322287691884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,4 +148,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 50
-  lifetime: 3
