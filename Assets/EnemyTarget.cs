@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyTarget : MonoBehaviour
 {
     public int health = 100;
+    public EnemySpawner spawner;
 
     public void TakeDamage(int damageAmount)
     {
@@ -19,6 +20,13 @@ public class EnemyTarget : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died!");
+
+        if (spawner != null)
+        {
+            spawner.OnEnemyDestroyed(transform.position);
+        }
+
         Destroy(gameObject);
+
     }
 }
