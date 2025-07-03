@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 5f); // Destroy bullet after 5 seconds to prevent clutter
     }
 
     private void Update()
@@ -17,6 +16,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Destroy(gameObject); // Destroy bullet after 5 seconds to prevent clutter
         if (collision.gameObject.CompareTag("Target"))
         {
             EnemyTarget enemy = collision.gameObject.GetComponent<EnemyTarget>();
