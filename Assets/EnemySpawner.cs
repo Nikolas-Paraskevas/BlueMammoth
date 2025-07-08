@@ -40,9 +40,12 @@ public class EnemySpawner : MonoBehaviour
     [Header("Spawn Point Sets")]
     public List<SpawnPointGroup> spawnPointGroups;
 
-    void Start()
+    public void StartWaves()
     {
-        StartCoroutine(HandleWave());
+        if (!isSpawning)
+        {
+            StartCoroutine(HandleWave());
+        }
     }
 
     void Update()
