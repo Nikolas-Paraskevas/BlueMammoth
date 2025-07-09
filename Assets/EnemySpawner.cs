@@ -112,4 +112,3 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log("Enemy killed");
     }
 }
-
