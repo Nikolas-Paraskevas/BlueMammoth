@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
+    public int lives = 3;
     private float currentHealth;
 
     public Slider healthBarSlider;
@@ -34,7 +36,16 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            if (lives > 0)
+            {
+                lives--;
+                Die();
+            }
+            else
+            {
+                Debug.Log("You lost");
+                SceneManager.LoadScene("Assets/DeathScene.unity");
+            }
         }
     }
 
