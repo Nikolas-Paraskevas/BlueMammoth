@@ -41,6 +41,7 @@ public class EnemySpawner : MonoBehaviour
     public Text waveText;
     public AudioSource WaveSpawn;
     public AudioSource Victory;
+    public AudioSource Music;
     private int Level = 0;
 
 
@@ -51,6 +52,7 @@ public class EnemySpawner : MonoBehaviour
     {
         StartCoroutine(HandleWave());
         UpdateLevelUI();
+        Music.Play();
     }
 
     void Update()
@@ -136,6 +138,6 @@ public class EnemySpawner : MonoBehaviour
     void UpdateLevelUI()
     {
         if (waveText != null)
-            waveText.text = $"Level: {Level} / 3";
+            waveText.text = $"{Level} / 3";
     }
 }

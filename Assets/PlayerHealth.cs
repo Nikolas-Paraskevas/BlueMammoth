@@ -10,10 +10,16 @@ public class PlayerHealth : MonoBehaviour
 
     public Slider healthBarSlider;
     public Transform respawnPoint; // Assign in Inspector or dynamically
+    public Text livesText;
+    public Text healthText;
+    public AudioSource deathSound;
+    public AudioSource damageSound;
 
     void Start()
     {
         currentHealth = maxHealth;
+        UpdateLivesUI();
+        UpdateHealthUI();
 
         if (healthBarSlider != null)
         {
@@ -27,6 +33,8 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        damageSound.Play();
+        UpdateHealthUI();
         Debug.Log("PlayerHealth: Took " + amount + " damage. Health now: " + currentHealth);
 
         if (healthBarSlider != null)
@@ -36,14 +44,16 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            if (lives > 0)
+            if (lives > 1)
             {
                 lives--;
                 Die();
+                UpdateLivesUI();
             }
             else
             {
                 Debug.Log("You lost");
+                Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene("Assets/DeathScene.unity");
             }
         }
@@ -51,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        deathSound.Play();
         Debug.Log("PlayerHealth: Player died.");
         Respawn();
     }
@@ -59,6 +70,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("PlayerHealth: Respawning...");
         currentHealth = maxHealth;
+        UpdateHealthUI();
 
         if (healthBarSlider != null)
         {
@@ -74,5 +86,17 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.LogWarning("PlayerHealth: No respawn point assigned!");
         }
+    }
+
+    void UpdateLivesUI()
+    {
+        if (livesText != null)
+            livesText.text = $"{lives} / 3";
+    }
+
+    void UpdateHealthUI()
+    {
+        if (healthText != null)
+            healthText.text = $"{currentHealth} / {maxHealth}";
     }
 }
