@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
+using UnityEngine.UI;
 
 
 
@@ -36,6 +38,11 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesSpawned = 0;
     private int enemiesAlive = 0;
     private bool isSpawning = false;
+    public Text waveText;
+    public AudioSource WaveSpawn;
+    public AudioSource Victory;
+    private int Level = 0;
+
 
     [Header("Spawn Point Sets")]
     public List<SpawnPointGroup> spawnPointGroups;
@@ -43,6 +50,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(HandleWave());
+        UpdateLevelUI();
     }
 
     void Update()
@@ -52,6 +60,7 @@ public class EnemySpawner : MonoBehaviour
         {
             isSpawning = false;
             StartCoroutine(HandleWave());
+            UpdateLevelUI();
         }
     }
 
@@ -60,6 +69,14 @@ public class EnemySpawner : MonoBehaviour
         if (currentWave >= waves.Count)
         {
             Debug.Log("All waves completed!");
+            Victory.Play();
+            Destroy(GameObject.Find("closed door"));
+            Destroy(GameObject.Find("lines"));
+            Destroy(GameObject.Find("cube1"));
+            Destroy(GameObject.Find("cube2"));
+            Destroy(GameObject.Find("cube3"));
+            Destroy(GameObject.Find("cube4"));
+            Destroy(GameObject.Find("cube5"));
             yield break;
         }
 
@@ -68,6 +85,10 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenWaves);
 
         Debug.Log($"Spawning wave {currentWave + 1} with {wave.enemyCount} enemies!");
+        WaveSpawn.Play();
+        WaveSpawn.SetScheduledEndTime(AudioSettings.dspTime + (4f));
+        Level++;
+        UpdateLevelUI();
         StartCoroutine(SpawnWave(wave));
 
         currentWave++;
@@ -110,5 +131,11 @@ public class EnemySpawner : MonoBehaviour
     {
         enemiesAlive--;
         Debug.Log("Enemy killed");
+    }
+
+    void UpdateLevelUI()
+    {
+        if (waveText != null)
+            waveText.text = $"Level: {Level} / 3";
     }
 }

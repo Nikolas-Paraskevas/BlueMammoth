@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7565998238492675210
+--- !u!1001 &8393176029013587908
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_Name
-      value: Mummy_Mon
+      value: Mummy_Mon (Boss)
       objectReference: {fileID: 0}
     - target: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_TagString
@@ -18,15 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,35 +98,35 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1914088210648336959}
+      addedObject: {fileID: 5459353482544284587}
     - targetCorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4928083553600605465}
+      addedObject: {fileID: 7460346642261570947}
     - targetCorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6371653338361525555}
+      addedObject: {fileID: 5691284078791788440}
     - targetCorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 898356886937266566}
+      addedObject: {fileID: 7843373516682484189}
     - targetCorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 756029315413920057}
+      addedObject: {fileID: 6664226291118792400}
     - targetCorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1267436703540914842}
+      addedObject: {fileID: 8511392508927343435}
   m_SourcePrefab: {fileID: 100100000, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
---- !u!1 &7565998238492772972 stripped
+--- !u!1 &8393176029013487906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
-  m_PrefabInstance: {fileID: 7565998238492675210}
+  m_PrefabInstance: {fileID: 8393176029013587908}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1914088210648336959
+--- !u!54 &5459353482544284587
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565998238492772972}
+  m_GameObject: {fileID: 8393176029013487906}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -147,13 +147,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4928083553600605465
+--- !u!65 &7460346642261570947
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565998238492772972}
+  m_GameObject: {fileID: 8393176029013487906}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -168,41 +168,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.4, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &6371653338361525555
+--- !u!114 &5691284078791788440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565998238492772972}
+  m_GameObject: {fileID: 8393176029013487906}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99875307cc8c66a43a9afaec963c53cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
---- !u!114 &898356886937266566
+  health: 500
+--- !u!114 &7843373516682484189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565998238492772972}
+  m_GameObject: {fileID: 8393176029013487906}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 112b9005c43d01e449fb4535b3f2decc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nma: {fileID: 756029315413920057}
+  nma: {fileID: 6664226291118792400}
   target: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
---- !u!195 &756029315413920057
+--- !u!195 &6664226291118792400
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565998238492772972}
+  m_GameObject: {fileID: 8393176029013487906}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
@@ -218,19 +218,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1267436703540914842
+--- !u!114 &8511392508927343435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565998238492772972}
+  m_GameObject: {fileID: 8393176029013487906}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d38f817babcd64f4b9fda2a8e6aab150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageInterval: 2
-  damageAmount: 25
-  damageRange: 5
+  damageAmount: 50
+  damageRange: 10
   player: {fileID: 0}
